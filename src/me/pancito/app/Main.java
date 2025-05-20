@@ -1,5 +1,3 @@
-
-
 package me.pancito.app;
 
 import java.util.Scanner;
@@ -7,8 +5,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        // Estos objetos nos permiten manipular productos y pedidos.
         ProductoService productoService = new ProductoService(scanner);
         PedidoService pedidoService = new PedidoService(productoService, scanner);
+        
         boolean salir = false;
         while (!salir) {
             System.out.println("\n==== MENÚ ====");
@@ -20,6 +21,7 @@ public class Main {
             System.out.println("6. Listar pedidos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
+            
             String opcion = scanner.nextLine();
             switch (opcion) {
                 case "1": productoService.agregarProducto(); break;
@@ -32,7 +34,10 @@ public class Main {
                 default: System.out.println("Opción inválida."); break;
             }
         }
+        
         System.out.println("Gracias por usar el sistema.");
-        scanner.close();
+        scanner.close(); // Esto lo aprendí en un curso introductorio a java y
+                         // me quedó de costumbre, aunque sé que no siempre
+                         // es necesario.
     }
 }
