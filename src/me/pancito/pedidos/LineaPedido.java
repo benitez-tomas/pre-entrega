@@ -2,6 +2,8 @@ package me.pancito.pedidos;
 
 import me.pancito.productos.Producto;
 
+// Esta clase se usa para crear cada una de las líneas de
+// un pedido, es decir, el qué y el cuanto.
 public class LineaPedido {
     private Producto producto;
     private int cantidad;
