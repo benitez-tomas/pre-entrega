@@ -10,15 +10,16 @@ public class ProductoService {
 
     public ProductoService(Scanner scanner) {
         this.scanner = scanner;
+        // Usamos el mismo scanner que en Main para no crear objetos al pedo
     }
 
     public void agregarProducto() {
         System.out.print("Nombre del producto: ");
         String nombre = scanner.nextLine();
         System.out.print("Precio: ");
-        double precio = Double.parseDouble(scanner.nextLine());
+        double precio = scanner.nextDouble();
         System.out.print("Stock: ");
-        int stock = Integer.parseInt(scanner.nextLine());
+        int stock = scanner.nextInt();
         productos.add(new Producto(nombre, precio, stock));
         System.out.println("Producto agregado con éxito.");
     }
@@ -42,22 +43,22 @@ public class ProductoService {
 
     public void actualizarProducto() {
         System.out.print("ID del producto a actualizar: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = scanner.nextInt();
         Producto producto = buscarPorId(id);
         if (producto == null) {
             System.out.println("Producto no encontrado.");
             return;
         }
         System.out.print("Nuevo precio (actual: " + producto.getPrecio() + "): ");
-        producto.setPrecio(Double.parseDouble(scanner.nextLine()));
+        producto.setPrecio(scanner.nextDouble(););
         System.out.print("Nuevo stock (actual: " + producto.getStock() + "): ");
-        producto.setStock(Integer.parseInt(scanner.nextLine()));
+        producto.setStock(scanner.nextInt(););
         System.out.println("Producto actualizado.");
     }
 
     public void eliminarProducto() {
         System.out.print("ID del producto a eliminar: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = scanner.nextInt();
         Producto producto = buscarPorId(id);
         if (producto != null) {
             productos.remove(producto);
