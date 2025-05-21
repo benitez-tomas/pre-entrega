@@ -8,7 +8,7 @@ public class Producto {
     private int stock;
 
     public Producto(String nombre, double precio, int stock) {
-        this.id = contador++;
+        this.id = contador++; // Igual que con los pedidos, la ID es incremental.
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
