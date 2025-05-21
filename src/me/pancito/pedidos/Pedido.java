@@ -9,7 +9,10 @@ public class Pedido {
     private List<LineaPedido> lineas;
 
     public Pedido() {
-        this.id = contador++;
+        this.id = contador++; // Asignamos el actual valor del contador
+                              // como ID del nuevo producto e incrementamos
+                              // el contador para darle el siguiente ID al
+                              // próximo producto creado.
         this.lineas = new ArrayList<>();
     }
 
